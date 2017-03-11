@@ -25,3 +25,7 @@ function largestOfFour(arr) {
     return Math.max.apply(null, arr);
   });
 }
+
+function confirmEnding(str, target) {
+  return str.substr(-target.length) ? true : false;
+}
