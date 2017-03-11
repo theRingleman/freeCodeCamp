@@ -29,3 +29,7 @@ function largestOfFour(arr) {
 function confirmEnding(str, target) {
   return str.substr(-target.length) === target ? true : false;
 }
+
+function repeatStringNumTimes(str, num) {
+  return num >= 0 ? str.repeat(num) : "";
+}
