@@ -33,3 +33,39 @@ function confirmEnding(str, target) {
 function repeatStringNumTimes(str, num) {
   return num >= 0 ? str.repeat(num) : "";
 }
+
+function truncateString(str, num) {
+  if (num <= 3) {
+    return str.slice(0, num) + "...";
+  } else if (str.length > num) {
+    return str.slice(0, num - 3) + "...";
+  }
+  return str;
+}
+
+function chunkArrayInGroups(arr, size) {
+  var final = [];
+  if (size !== 0) {
+    for (var i = 0; i < arr.length; i+=size) {
+      final.push(arr.slice(i, i+size));
+    }
+  }
+  return final;
+}
+
+function slasher(arr, howMany) {
+  return arr.slice(howMany);
+}
+
+function mutation(arr) {
+  var test = arr[1].toLowerCase();
+  var target = arr[0].toLowerCase();
+
+  for (var i = 0; i < test.length; i++) {
+    if (target.indexOf(test[i] > 0)) {
+      return false;
+    }
+  }
+
+  return true;
+}
