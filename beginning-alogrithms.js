@@ -69,3 +69,40 @@ function mutation(arr) {
 
   return true;
 }
+
+function bouncer(arr) {
+  // Don't show a false ID to this bouncer.
+  return arr.filter(function(i){
+    if(i){
+      return i;
+    }
+  });
+}
+
+function destroyer(arr) {
+  // Remove all the values
+  var argsList = [];
+  for(var i = 1; i < arguments.length; i++){
+    argsList.push(arguments[i]);
+  }
+  
+  return arr.filter(function(i){
+    if(!argsList.includes(i)){
+      return i;
+    }
+  });
+}
+
+function getIndexToIns(arr, num) {
+  // Find my place in this sorted array.
+  arr.push(num);
+  arr.sort(function(a,b){
+    return a - b;
+  });
+  
+  return arr.indexOf(num);
+}
+
+function rot13(str) { // LBH QVQ VG!
+  return str.replace(/[A-Z]/g, L => String.fromCharCode((L.charCodeAt(0) % 26) + 65));
+}
