@@ -76,3 +76,19 @@ function translatePigLatin(str) {
     }
   }
 }
+
+function pairElement(str) {
+  var finalArr = [];
+  for(var i = 0; i < str.length; i++){
+    if(str[i] === "G"){
+      finalArr.push(["G", "C"]);
+    } else if(str[i] === "C"){
+      finalArr.push(["C", "G"]);
+    } else if(str[i] === "A"){
+      finalArr.push(["A", "T"]);
+    } else if(str[i] === "T"){
+      finalArr.push(["T", "A"]);
+    }
+  }
+  return finalArr;
+}
