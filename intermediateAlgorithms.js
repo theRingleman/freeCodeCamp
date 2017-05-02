@@ -92,3 +92,35 @@ function pairElement(str) {
   }
   return finalArr;
 }
+
+function fearNotLetter(str) {
+  strArray = str.split('');
+  numArray = [];
+  
+  for(var i = 0; i < strArray.length; i++){
+    numArray.push(strArray[i].charCodeAt());
+  }
+  
+  for(var j = 0; j < numArray.length; j++){
+    if(numArray[j] + 1 !== numArray[j + 1] && j !== numArray.length - 1){
+      return String.fromCharCode(numArray[j] + 1);
+    }
+  }
+  
+  return undefined;
+}
+
+function booWho(bool) {
+  // What is the new fad diet for ghost developers? The Boolean.
+  
+  return typeof bool === 'boolean' ? true : false;
+}
+
+function uniteUnique(arr) {
+
+  for(var i = 1; i < arguments.length; i++){
+    arr = arr.concat(arguments[i]);
+  }
+  
+  return [...new Set(arr)];
+}
